@@ -20,13 +20,13 @@ Please note these are not exhaustive lists. It's currently estimated that there 
 transactions enabled and various older Zcash forks with Sprout technology planning to upgrade.
 
 The Sapling Woodchipper is spiritually similar to the [Slowloris attack](https://en.wikipedia.org/wiki/Slowloris_(computer_security)),
-in that one or a few machines can completely disable much more powerful entity in a vastly asymmetric attack. In this analogy, long-lived HTTP connections become extremely large transactions, and instead of taking down a webserver, making it unable to process requests, a blockchain is completely filled to the point that no normal users can make transactions. This is a very focused attack, like the Slowloris.
+in that one or a few machines can completely disable much more powerful entity in a vastly asymmetric attack. In this analogy, long-lived HTTP connections become extremely large transactions, and instead of taking down a webserver, making it unable to process requests, a blockchain is completely filled to the point that no normal users can make transactions. This is a very focused attack, like the Slowloris. Unlike the Slowloris attack, the Sapling Woodchipper is very CPU intensive, and as such, the attack benefits greatly from more powerful CPUs. In this sense, the Sapling Woodchipper takes a lot more work than Slowloris, which merely waits the maximum time before successfully ending a request.
 
 Sapling Woodchipper has been assigned [CVE-2019-11636](https://nvd.nist.gov/vuln/detail/CVE-2019-11636).
 
 ## Details
 
-popcorn: More Details Coming Real Soon :popcorn:
+:popcorn: More Details Coming Real Soon :popcorn:
 
 ## References
 
