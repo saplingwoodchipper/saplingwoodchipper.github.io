@@ -2,9 +2,20 @@
 
 ## Zcash Protocol-Level Denial-of-Service
 
-![Image of Yaktocat](https://saplingwoodchipper.github.io/sapling-woodchipper.png)
+![Sapling Woodchipper](https://saplingwoodchipper.github.io/sapling-woodchipper.png)
 
-The Sapling Woodchipper ....
+The Sapling Woodchipper is a protocol-level Denial-of-Service against any cryptocoin which implements the Zcash 2.x Sapling protocol, most notably Zcash (ZEC) itself.
+
+The exact severity of the DoS depends on the exact chain parameters of each coin, but the following is a partial list of coins known
+to be vulnerable:
+
+* Zcash (ZEC)
+
+## 
+
+## References
+
+* Slowloris: https://en.wikipedia.org/wiki/Slowloris_(computer_security)
 
 ## Updating this website
 
