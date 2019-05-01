@@ -10,8 +10,11 @@ The exact severity of the DoS depends on the exact chain parameters of each coin
 to be support Sapling transactions and be vulnerable in some manner:
 
 * Zcash (ZEC)
-* Hush (HUSH)
 
+Coins known to have Sapling enabled and have mitigations in-place:
+
+* Hush (HUSH)
+* Pirate (ARRR)
 
 The Sapling Woodchipper is spiritually similar to the [Slowloris attack](https://en.wikipedia.org/wiki/Slowloris_(computer_security)),
 in that one or a few machines can completely disable much more powerful entity in a vastly asymmetric attack. In this analogy, long-lived HTTP connections become extremely large transactions, and instead of taking down a webserver, making it unable to process requests, a blockchain is completely filled to the point that no normal users can make transactions. This is a very focused attack, like the Slowloris.
@@ -36,4 +39,4 @@ GPLv3
 
 ## Author
 
-Duke Leto
+Duke Leto https://keybase.io/dukeleto
