@@ -11,11 +11,15 @@ to be vulnerable:
 
 * Zcash (ZEC)
 
+The Sapling Woodchipper is spiritually similar to the [Slowloris attack](https://en.wikipedia.org/wiki/Slowloris_(computer_security)),
+in that one or a few machines can completely disable much more powerful entity in a vastly asymmetric attack.
+
+
 ## 
 
 ## References
 
-* Slowloris: https://en.wikipedia.org/wiki/Slowloris_(computer_security)
+Slowloris: 
 
 ## Updating this website
 
