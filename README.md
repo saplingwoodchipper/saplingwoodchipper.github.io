@@ -1,6 +1,6 @@
 # Sapling Woodchipper
 
-## Zcash Protocol-Level Denial-of-Service
+## Zcash Protocol-Level Denial-of-Service (CVE-2019-11636)
 
 ![Sapling Woodchipper](https://saplingwoodchipper.github.io/sapling-woodchipper.png)
 
