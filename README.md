@@ -6,7 +6,6 @@
 
 The Sapling Woodchipper is a protocol-level Denial-of-Service against any cryptocoin which implements the Zcash 2.x Sapling protocol, most notably Zcash (ZEC) itself.
 
-Official site: https://saplingwoodchipper.github.io
 
 The exact severity of the DoS depends on the exact chain parameters of each coin, but the following is a partial list of coins known
 to support Sapling transactions and lack mitigations:
@@ -28,7 +27,7 @@ Sapling Woodchipper has been assigned [CVE-2019-11636](https://nvd.nist.gov/vuln
 
 ## Details
 
-:popcorn: More Details Coming Real Soon :popcorn:
+More Details Coming Real Soon 
 
 ## References
 
@@ -43,6 +42,10 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 ## LICENSE
 
 GPLv3
+
+## Official Site
+
+[https://saplingwoodchipper.github.io](https://saplingwoodchipper.github.io)
 
 ## Author
 
