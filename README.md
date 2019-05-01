@@ -9,12 +9,12 @@ The Sapling Woodchipper is a protocol-level Denial-of-Service against any crypto
 The exact severity of the DoS depends on the exact chain parameters of each coin, but the following is a partial list of coins known
 to support Sapling transactions and lack mitigations:
 
-* Zcash (ZEC)
+* Zcash (ZEC) https://z.cash
 
 Coins known to have Sapling enabled and have mitigations in-place:
 
-* Hush (HUSH)
-* Pirate (ARRR)
+* Hush (HUSH) https://myhush.org
+* Pirate (ARRR) https://pirate.black
 
 Please note these are not exhaustive lists. It's currently estimated that there are many dozens of blockchains which have Sapling
 transactions enabled and various older Zcash forks with Sprout technology planning to upgrade.
@@ -24,7 +24,9 @@ in that one or a few machines can completely disable much more powerful entity i
 
 Sapling Woodchipper has been assigned [CVE-2019-11636](https://nvd.nist.gov/vuln/detail/CVE-2019-11636).
 
-## 
+## Details
+
+popcorn: More Details Coming Real Soon :popcorn:
 
 ## References
 
