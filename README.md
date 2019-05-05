@@ -4,6 +4,62 @@
 
 ![Sapling Woodchipper](https://saplingwoodchipper.github.io/sapling-woodchipper.png)
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"> </script>
+<script>
+    $( document ).ready(function() {
+        $.ajax({
+            url: "https://api.coingecko.com/api/v3/simple/price?ids=zcash&vs_currencies=BTC%2CUSD%2CEUR&include_market_cap=true&include_24hr_vol=true",
+            type: "GET",
+            dataType : "json",
+        })
+        .done(function( json ) {
+            console.log(json);
+            $('#zecpriceusd').html( "$" + json.zcash.usd.toFixed(2) );
+            $('#zecpriceeur').html( "$" + json.zcash.eur.toFixed(2) );
+            $('#zecpricebtc').html( json.zcash.btc.toFixed(4) + " BTC" );
+            $('#zecmcap').html( "$" + Math.round( json.zcash.usd_market_cap / 1000000 ) + "M" );
+            $('#zeccostusd').html( "$" + (json.zcash.usd * 0.0001 * 576).toFixed(2) );
+            $('#zeccosteur').html( (json.zcash.eur * 0.0001 * 576).toFixed(2) + " EUR" );
+            $('#zeccostbtc').html( (json.zcash.btc * 0.0001 * 576).toFixed(8) + " BTC" );
+        })
+        .fail(function( xhr, status, errorThrown ) {
+            alert( "Ooops, error talking to Coingecko!");
+            console.log( "Error: " + errorThrown );
+            console.log( "Status: " + status );
+            console.dir( xhr );
+        })
+        .always(function( xhr, status ) {
+            console.log("Finished!");
+        });
+    });
+</script>
+Sapling Woodchipper Loves Supple Saplings
+<table border=1>
+    <tr>
+    <th>Name</th>
+    <th>Symbol</th>
+    <th>Price (USD)</th>
+    <th>Price (EUR)</th>
+    <th>Price (BTC)</th>
+    <th>Market Cap</th>
+    <th>Daily Attack Cost (USD)</th>
+    <th>Daily Attack Cost (EUR)</th>
+    <th>Daily Attack Cost (BTC)</th>
+    </tr>
+    <tr>
+        <td><a href="https://z.cash">Zcash</a></td>
+        <td>ZEC</td>
+        <td id="zecpriceusd"></td>
+        <td id="zecpriceeur"></td>
+        <td id="zecpricebtc"></td>
+        <td id="zecmcap"></td>
+        <td id="zeccostusd"></td>
+        <td id="zeccosteur"></td>
+        <td id="zeccostbtc"></td>
+    </tr>
+</table>
+
+
 The Sapling Woodchipper is a protocol-level Denial-of-Service against any
 cryptocoin which implements the Zcash 2.x Sapling protocol, most notably Zcash
 (ZEC) itself.
