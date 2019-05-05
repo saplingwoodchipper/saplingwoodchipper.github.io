@@ -34,29 +34,30 @@
     });
 </script>
 Sapling Woodchipper Loves Supple Saplings
+
 <table border=1>
-    <tr>
-    <th>Name</th>
-    <th>Symbol</th>
-    <th>Price (USD)</th>
-    <th>Price (EUR)</th>
-    <th>Price (BTC)</th>
-    <th>Market Cap</th>
-    <th>Daily Attack Cost (USD)</th>
-    <th>Daily Attack Cost (EUR)</th>
-    <th>Daily Attack Cost (BTC)</th>
-    </tr>
-    <tr>
-        <td><a href="https://z.cash">Zcash</a></td>
-        <td>ZEC</td>
-        <td id="zecpriceusd"></td>
-        <td id="zecpriceeur"></td>
-        <td id="zecpricebtc"></td>
-        <td id="zecmcap"></td>
-        <td id="zeccostusd"></td>
-        <td id="zeccosteur"></td>
-        <td id="zeccostbtc"></td>
-    </tr>
+<tr>
+<th>Name</th>
+<th>Symbol</th>
+<th>Price (USD)</th>
+<th>Price (EUR)</th>
+<th>Price (BTC)</th>
+<th>Market Cap</th>
+<th>Daily Attack Cost (USD)</th>
+<th>Daily Attack Cost (EUR)</th>
+<th>Daily Attack Cost (BTC)</th>
+</tr>
+<tr>
+    <td><a href="https://z.cash">Zcash</a></td>
+    <td>ZEC</td>
+    <td id="zecpriceusd"></td>
+    <td id="zecpriceeur"></td>
+    <td id="zecpricebtc"></td>
+    <td id="zecmcap"></td>
+    <td id="zeccostusd"></td>
+    <td id="zeccosteur"></td>
+    <td id="zeccostbtc"></td>
+</tr>
 </table>
 
 
