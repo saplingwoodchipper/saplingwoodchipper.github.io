@@ -1,5 +1,30 @@
 # Sapling Woodchipper
 
+<table border=1>
+<tr>
+<th>Name</th>
+<th>Symbol</th>
+<th>Price (USD)</th>
+<th>Price (EUR)</th>
+<th>Price (BTC)</th>
+<th>Market Cap</th>
+<th>Daily Attack Cost (USD)</th>
+<th>Daily Attack Cost (EUR)</th>
+<th>Daily Attack Cost (BTC)</th>
+</tr>
+<tr>
+<td><a href="https://z.cash">Zcash</a></td>
+<td>ZEC</td>
+<td id="zecpriceusd"></td>
+<td id="zecpriceeur"></td>
+<td id="zecpricebtc"></td>
+<td id="zecmcap"></td>
+<td id="zeccostusd"></td>
+<td id="zeccosteur"></td>
+<td id="zeccostbtc"></td>
+</tr>
+</table>
+
 ## Zcash Protocol-Level Denial-of-Service (CVE-2019-11636)
 
 ![Sapling Woodchipper](https://saplingwoodchipper.github.io/sapling-woodchipper.png)
@@ -34,31 +59,6 @@
     });
 </script>
 Sapling Woodchipper Loves Supple Saplings
-
-<table border=1>
-<tr>
-<th>Name</th>
-<th>Symbol</th>
-<th>Price (USD)</th>
-<th>Price (EUR)</th>
-<th>Price (BTC)</th>
-<th>Market Cap</th>
-<th>Daily Attack Cost (USD)</th>
-<th>Daily Attack Cost (EUR)</th>
-<th>Daily Attack Cost (BTC)</th>
-</tr>
-<tr>
-    <td><a href="https://z.cash">Zcash</a></td>
-    <td>ZEC</td>
-    <td id="zecpriceusd"></td>
-    <td id="zecpriceeur"></td>
-    <td id="zecpricebtc"></td>
-    <td id="zecmcap"></td>
-    <td id="zeccostusd"></td>
-    <td id="zeccosteur"></td>
-    <td id="zeccostbtc"></td>
-</tr>
-</table>
 
 
 The Sapling Woodchipper is a protocol-level Denial-of-Service against any
@@ -112,3 +112,4 @@ GPLv3
 ## Author
 
 Duke Leto [Keybase](https://keybase.io/dukeleto)
+
