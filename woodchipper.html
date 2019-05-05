@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6f7ae6f030869cdeb390801f2fb37dcf0144d802">
+
+<title>Sapling Woodchipper CVE-2019-11636 | saplingwoodchipper.github.io</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Sapling Woodchipper" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Sapling Woodchipper CVE-2019-11636." />
+<meta property="og:description" content="Sapling Woodchipper CVE-2019-11636." />
+<link rel="canonical" href="https://saplingwoodchipper.github.io/" />
+<meta property="og:url" content="https://saplingwoodchipper.github.io/" />
+<meta property="og:site_name" content="saplingwoodchipper.github.io" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://saplingwoodchipper.github.io/","headline":"Sapling Woodchipper","name":"saplingwoodchipper.github.io","description":"Sapling Woodchipper Website","@context":"http://schema.org"}</script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>saplingwoodchipper.github.io</h1>
+        <h2>Sapling Woodchipper Website</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/saplingwoodchipper/saplingwoodchipper.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="sapling-woodchipper">Sapling Woodchipper</h1>
+
+<table border=1>
+<tr>
+<th>Name</th>
+<th>Symbol</th>
+<th>Price (USD)</th>
+<th>Price (EUR)</th>
+<th>Price (BTC)</th>
+<th>Market Cap</th>
+<th>Daily Attack Cost (USD)</th>
+<th>Daily Attack Cost (EUR)</th>
+<th>Daily Attack Cost (BTC)</th>
+</tr>
+<tr>
+<td><a href="https://z.cash">Zcash</a></td>
+<td>ZEC</td>
+<td id="zecpriceusd"></td>
+<td id="zecpriceeur"></td>
+<td id="zecpricebtc"></td>
+<td id="zecmcap"></td>
+<td id="zeccostusd"></td>
+<td id="zeccosteur"></td>
+<td id="zeccostbtc"></td>
+</tr>
+</table>
+
+<h2 id="zcash-protocol-level-denial-of-service-cve-2019-11636">Zcash Protocol-Level Denial-of-Service (CVE-2019-11636)</h2>
+
+<p><img src="https://saplingwoodchipper.github.io/sapling-woodchipper.png" alt="Sapling Woodchipper" /></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"> </script>
+
+<script>
+    $( document ).ready(function() {
+        $.ajax({
+            url: "https://api.coingecko.com/api/v3/simple/price?ids=zcash&vs_currencies=BTC%2CUSD%2CEUR&include_market_cap=true&include_24hr_vol=true",
+            type: "GET",
+            dataType : "json",
+        })
+        .done(function( json ) {
+            console.log(json);
+            $('#zecpriceusd').html( "$" + json.zcash.usd.toFixed(2) );
+            $('#zecpriceeur').html( "$" + json.zcash.eur.toFixed(2) );
+            $('#zecpricebtc').html( json.zcash.btc.toFixed(4) + " BTC" );
+            $('#zecmcap').html( "$" + Math.round( json.zcash.usd_market_cap / 1000000 ) + "M" );
+            $('#zeccostusd').html( "$" + (json.zcash.usd * 0.0001 * 576).toFixed(2) );
+            $('#zeccosteur').html( (json.zcash.eur * 0.0001 * 576).toFixed(2) + " EUR" );
+            $('#zeccostbtc').html( (json.zcash.btc * 0.0001 * 576).toFixed(8) + " BTC" );
+        })
+        .fail(function( xhr, status, errorThrown ) {
+            alert( "Ooops, error talking to Coingecko!");
+            console.log( "Error: " + errorThrown );
+            console.log( "Status: " + status );
+            console.dir( xhr );
+        })
+        .always(function( xhr, status ) {
+            console.log("Finished!");
+        });
+    });
+</script>
+
+<p>Sapling Woodchipper Loves Supple Saplings</p>
+
+<p>The Sapling Woodchipper is a protocol-level Denial-of-Service against any
+cryptocoin which implements the Zcash 2.x Sapling protocol, most notably Zcash
+(ZEC) itself.</p>
+
+<p>The exact severity of the DoS depends on the exact chain parameters of each
+coin.</p>
+
+<p>It’s currently estimated that there are many dozens of blockchains which have
+Sapling transactions enabled and various older Zcash forks with Sprout
+technology planning to upgrade.</p>
+
+<p>The Sapling Woodchipper is spiritually similar to the
+<a href="https://en.wikipedia.org/wiki/Slowloris_(computer_security)">Slowloris attack</a>,
+in that one or a few machines can completely disable much more powerful entity
+in a vastly asymmetric attack. In this analogy, long-lived HTTP connections
+become extremely large transactions, and instead of taking down a webserver,
+making it unable to process requests, a blockchain is completely filled to the
+point that no normal users can make transactions. This is a very focused
+attack, like the Slowloris. Unlike the Slowloris attack, the Sapling
+Woodchipper is very CPU intensive, and as such, the attack benefits greatly
+from more powerful CPUs. In this sense, the Sapling Woodchipper takes a lot
+more work than Slowloris, which merely waits the maximum time before
+successfully ending a request.</p>
+
+<p>Sapling Woodchipper has been assigned <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-11636">CVE-2019-11636</a>.</p>
+
+<h2 id="details">Details</h2>
+
+<p>More Details Coming Real Soon</p>
+
+<h2 id="references">References</h2>
+
+<p>…</p>
+
+<h2 id="updating-this-website">Updating this website</h2>
+
+<p>This website is very easy to update. You can use the <a href="https://github.com/saplingwoodchipper/saplingwoodchipper.github.io/edit/master/README.md">editor on GitHub</a> to maintain and preview the content of this website. Patches welcome!</p>
+
+<p>For more details see <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown</a>.</p>
+
+<h2 id="license">LICENSE</h2>
+
+<p>GPLv3</p>
+
+<h2 id="official-site">Official Site</h2>
+
+<p><a href="https://saplingwoodchipper.github.io">https://saplingwoodchipper.github.io</a></p>
+
+<h2 id="author">Author</h2>
+
+<p>Duke Leto <a href="https://keybase.io/dukeleto">Keybase</a></p>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
