@@ -129,11 +129,12 @@ The code change which enable the Sapling Woodchipper was merged via <a href="htt
 as a feature in <a href="https://github.com/zcash/zcash/issues/2864">Zcash Issue 2864</a> and relate to the maximum allowed transaction size:
 
 <pre>
-// from src/consensus/consensus.h
 -static const unsigned int MAX_TX_SIZE = 100000;
 +static const unsigned int MAX_TX_SIZE_BEFORE_SAPLING = 100000;
 +static const unsigned int MAX_TX_SIZE_AFTER_SAPLING = MAX_BLOCK_SIZE;
 </pre>
+
+From <a href="https://github.com/zcash/zcash/blob/master/src/consensus/consensus.h#L27">src/consensus/consensus.h</a>:
 
 Previously transactions could be at most 100KB in size but after Sapling
 activation, transactions can fill an entire block!  This means that to fill all
