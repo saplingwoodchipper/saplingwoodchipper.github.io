@@ -147,9 +147,11 @@ which goes back to the previous 100KB limit. It increases attack cost by roughly
 
 <h2>Zcash Fee Market</h2>
 
-The actions of Zcash mining pool make it very clear that a "shadow" Zcash fee market exists.
+The actions of Zcash mining pools make it very clear that a "shadow" Zcash fee market exists. This makes perfect
+sense for miners and mining pools, but it seems that various Zcash people, up to and including the CEO, would
+prefer to tell people that no fee market exists on the Zcash network.
 
-According to the <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/ux_wallet_checklist.html">Zcash Wallet Developer UX Checklist"</a>:
+According to the <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/ux_wallet_checklist.html">Zcash Wallet Developer UX Checklist</a>:
 
 <pre>
 Disable users from setting their own transaction fees
@@ -168,7 +170,12 @@ during the research of this CVE:
     <li> Paying a double (or more) free will make large transaction get mined in the next block, i.e. a fee market exists</li>
 </ul>
 
-It is the author's recommendation that Zcash and all source code forks of Zcash migrate to variable fees to fully mitigate transaction-based Denial-of-Service attacks.
+It is the author's recommendation that Zcash and all source code forks of Zcash
+migrate to variable fees to fully mitigate transaction-based Denial-of-Service
+attacks.  Additionally, GUI wallets should be smart enough to know what current
+network fee conditions are, and give users a reasonable choice of paying
+different fees for confirmations in different time frames, just like modern
+Bitcoin wallets.
 
 <h2 id="references">References</h2>
 
