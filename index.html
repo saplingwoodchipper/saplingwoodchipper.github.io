@@ -145,6 +145,24 @@ which goes back to the previous 100KB limit. It increases attack cost by roughly
 +static const unsigned int MAX_TX_SIZE_AFTER_SAPLING = 100000;
 </pre>
 
+Here is an example transaction which is 996827 bytes (0.95MB) and includes over 1000 JoinSplits:
+<a href="http://zcashnetwork.info/tx/9409c0f60064c6e7dab54beb566ace5bdc9e32e2ca153883d9363bb8e290c56a">ZEC transaction 9409c0f6</a>.
+
+If an attacker has a CPU with a single core that can do ~1000 JoinSplits in
+less time than the block time of the coin, i.e. 150 seconds for ZEC, then a
+single core of a single computer can flood the network with transactions and
+pay the absolute minimum attack cost of 0.0576 ZEC/day. For attackers with
+slower CPUs, they must use more machines in the attack, and pay more
+transaction fees.
+
+According to <a href="https://github.com/zcash/zcash/issues/3983">Github Issue 3983</a>:
+"Note that Sapling Output proofs can be reused for multiple output notes, allowing transactions to be inflated to any desired size at low computational cost."
+which means that the Saplign Woodchipper could be made drastically more efficient, by re-using the same data across all ~1000 JoinSplits instead of recomputing it.
+
+The author will also note that the new line of Ryzen 7 and Ryzen 9 CPUs which
+come out in July will make CPUs which can effectively "woodchip" cheap and
+affordable.
+
 <h2>Zcash Fee Market</h2>
 
 The actions of Zcash mining pools make it very clear that a "shadow" Zcash fee market exists. This makes perfect
