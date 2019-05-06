@@ -124,7 +124,55 @@ successfully ending a request.</p>
 
 <h2 id="details">Details</h2>
 
-<p>More Details Coming Real Soon</p>
+The code change which enable the Sapling Woodchipper was merged via <a href="https://github.com/zcash/zcash/pull/3212">Zcash Pull Request 3212</a> and requested
+as a feature in <a href="https://github.com/zcash/zcash/issues/2864">Zcash Issue 2864</a> and relate to the maximum allowed transaction size:
+
+<pre>
+// from src/consensus/consensus.h
+-static const unsigned int MAX_TX_SIZE = 100000;
++static const unsigned int MAX_TX_SIZE_BEFORE_SAPLING = 100000;
++static const unsigned int MAX_TX_SIZE_AFTER_SAPLING = MAX_BLOCK_SIZE;
+</pre>
+
+Previously transactions could be at most 100KB in size but after Sapling
+activation, transactions can fill an entire block!  This means that to fill all
+576 daily Zcash blocks, one must only pay a single transaction fee per block,
+or a fixed cost of 0.0576 ZEC/day to fill all blocks.
+
+The following one line patch is the simplest mitigation to the Sapling Woodchipper,
+which goes back to the previous 100KB limit. It increases attack cost by roughly
+10X-40X depending on blocksize.
+
+<pre>
+// in src/consensus/consensus.h
+-static const unsigned int MAX_TX_SIZE_AFTER_SAPLING = MAX_BLOCK_SIZE;
++static const unsigned int MAX_TX_SIZE_AFTER_SAPLING = 100000;
+</pre>
+
+<h2>Zcash Fee Market</h2>
+
+The actions of Zcash mining pool make it very clear that a "shadow" Zcash fee market exists.
+
+According to the <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/ux_wallet_checklist.html">Zcash Wallet Developer UX Checklist"</a>:
+
+<pre>
+Disable users from setting their own transaction fees
+
+Do not allow users to customize fees.
+Our network is fast enough that mining incentivization is not an issue.
+Unique transaction fees can cause linkability within transactions, especially for zaddrs.
+</pre>
+
+This is mis-guided and wrong. The author discovered some interesting information about Zcash mining pools
+during the research of this CVE:
+
+<ul>
+    <li> All/most pools will not mine a transaction larger than 1MB, though according to the Zcash protocol and codebase, they are allowed. This has the effect of taking less CPU-minutes to fill a block!</li>
+    <li> All/most pools will de-prioritize large transactions with the default transaction fee</li>
+    <li> Paying a double (or more) free will make large transaction get mined in the next block, i.e. a fee market exists</li>
+</ul>
+
+It is the author's recommendation that Zcash and all source code forks of Zcash migrate to variable fees to fully mitigate transaction-based Denial-of-Service attacks.
 
 <h2 id="references">References</h2>
 
